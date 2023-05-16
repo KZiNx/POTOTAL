@@ -1,16 +1,14 @@
 package secretaria;
 
-import java.util.Date;
-
 public class Aluno {
 	
 	private String nomeAluno;
-	private Date datadeNascimento;
-	private String endereço;
+	private int datadeNascimento;
+	private String endereco;
 	private String email;
 	private String nomeResponsavel;
-	private int numeroTelefone;
-	private int cpf;
+	private String numeroTelefone;
+	private String cpf;
 	private Matricula matricula;
 
 	public void setNome(String nome) {
@@ -43,18 +41,34 @@ public class Aluno {
 	public String getNomeResp() {
 		return nomeResponsavel;
 	}
-	public void setNumeroTelefone(Integer numero) {
-		if(numero.toString().matches("[0-9]")) {
+	public void setNumeroTelefone(String numero) {
+		if(numeroTelefone.toString().matches("[0-9]*") && numeroTelefone.length() >= 0 && numeroTelefone.length() <= 9) {
 			numeroTelefone = numero;
 		} else {
 			System.out.print("numero invalido");
 		}
-	}public void setNumeroCPF(Integer NumeroCPF) {
-		if(cpf.toString().matches("[0-9]") && cpf.length() >= 0 && cpf.length() <= 11) {
-			cpf = NumeroCPF;
+	}
+	public String getNumeroTelefone() {
+		return numeroTelefone;
+	}
+	public void setNumeroCPF(String numeroCPF) {
+		if(cpf.toString().matches("[0-9]*") && cpf.length() >= 0 && cpf.length() <= 11) {
+			cpf = numeroCPF;
 		} else {
 			System.out.print("cpf invalido");
 		}
 	}
-	
+	public String getNomeCPF() {
+		return cpf;
+	}
+	public void setdatadeNascimento(int data) {
+		if(cpf.length() >= 0 && cpf.length() <= 1950) {
+			datadeNascimento = data;
+		} else {
+			System.out.print("data invalido");
+		}
+	}
+	public int getdataNascimento() {
+		return datadeNascimento;
+	}
 }
