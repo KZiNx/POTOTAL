@@ -1,74 +1,88 @@
 package secretaria;
-
 public class Aluno {
-	
-	private String nomeAluno;
-	private int datadeNascimento;
-	private String endereco;
-	private String email;
-	private String nomeResponsavel;
-	private String numeroTelefone;
-	private String cpf;
-	private Matricula matricula;
 
+    private String nome;
+    private String cpf;
+    private String endereco;
+    private String telefone;
+    private String email;
+    private String responsavel;
+
+    /** classe para pegar o nome */
 	public void setNome(String nome) {
 		if(nome.length() >= 3 && nome.matches("[A-Za-z]*")) {
-			nomeAluno = nome;
+			this.nome = nome;
 		} else {
 			System.out.print("Nome Invalido");
 		}
 	}
+	/** clase get nome */
 	public String getNome() {
-		return nomeAluno;
+		return nome;
 	}
-	public void setEmail(String mail) {
-		if (mail.matches("[@]*")) {
-			email = mail;
+	/** classe para pegar o email */
+	public void setEmail(String email) {
+		if (email.matches("[@]*") && email.matches("[A-Za-z]*")) {
+			this.email = email;
 		} else {
 			System.out.print("email invalido");
 		}
 	}
+	/** clase get email */
 	public String getEmail() {
 		return email;
 	}
-	public void setNomeResp(String nomeResp) {
-		if(nomeResp.length() >= 3 && nomeResp.matches("[A-Za-z]*")) {
-			nomeResponsavel = nomeResp;
+	/** classe para pegar o nome do responsavel */
+	public void setNomeResp(String responsavel) {
+		if(responsavel.length() >= 3 && responsavel.matches("[A-Za-z]*")) {
+			this.responsavel = responsavel;
 		} else {
 			System.out.print("Nome Invalido");
 		}
 	}
+	/** clase get nome do responsavel */
 	public String getNomeResp() {
-		return nomeResponsavel;
+		return responsavel;
 	}
-	public void setNumeroTelefone(String numero) {
-		if(numeroTelefone.toString().matches("[0-9]*") && numeroTelefone.length() >= 0 && numeroTelefone.length() <= 9) {
-			numeroTelefone = numero;
+	/** classe para pegar o numero de telefone */
+	public void setNumeroTelefone(String telefone) {
+		if(telefone.matches("[0-9]*") && telefone.length() >= 0 && telefone.length() <= 9) {
+			this.telefone = telefone;
 		} else {
 			System.out.print("numero invalido");
 		}
 	}
+	/** clase get numero de telefone */
 	public String getNumeroTelefone() {
-		return numeroTelefone;
+		return telefone;
 	}
-	public void setNumeroCPF(String numeroCPF) {
+	/** classe para pegar o CPF */
+	public void setNumeroCPF(String cpf) {
 		if(cpf.toString().matches("[0-9]*") && cpf.length() >= 0 && cpf.length() <= 11) {
-			cpf = numeroCPF;
+			this.cpf = cpf;
 		} else {
 			System.out.print("cpf invalido");
 		}
 	}
+	/** clase get CPF */
 	public String getNomeCPF() {
 		return cpf;
 	}
-	public void setdatadeNascimento(int data) {
-		if(cpf.length() >= 0 && cpf.length() <= 1950) {
-			datadeNascimento = data;
+	/** class para pegar o endereço */
+	public void setEndereco(String endereco) {
+		if(endereco.matches("[A-Za-z]*") && endereco.length() > 5){
+			this.endereco = endereco;
 		} else {
-			System.out.print("data invalido");
+			System.out.println("Endereço Invalido!");
 		}
 	}
-	public int getdataNascimento() {
-		return datadeNascimento;
+	/** classe get endereco */
+	public String getEndereco(){
+		return endereco;
 	}
+	/** construtor aluno */
+	public Aluno(String nome) {
+		setNome(nome);
+	}
+
 }

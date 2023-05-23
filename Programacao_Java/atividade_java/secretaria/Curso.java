@@ -1,29 +1,22 @@
 package secretaria;
-
 public class Curso {
 
-	private String nomeCurso;
-	private int cargaHoraria;
-	private Unidades_curriculares unidades_curriculares; 
-	
-	public void setNomeCurso(String nome) {
-		if(nome.length() >= 3 && nome.matches("[A-Za-z]*")) {
-			nomeCurso = nome;
-		} else {
-			System.out.print("Nome Invalido");
-		}
-	}
-	public String getNome() {
-		return nomeCurso;
-	}
-	public void setCargaHoraria(int hora) {
-		if(cargaHoraria > 0) {
-			cargaHoraria = hora;
-		} else {
-			System.out.print("Nome Invalido");
-		}
-	}
-	public String getcargaHoraria() {
-		return nomeCurso;
-	}
+    private String nome;
+
+    /** funcao para receber nome do curso */
+    public void setNome(String nome){
+        if(nome.matches("[A-Za-z0-9]*") && nome.length() > 0){
+            this.nome = nome;
+        } else {
+            System.out.println("Nome invalido!");
+        }
+    }
+    /** funcao get nome do curso */
+    public String getNome(){
+        return nome;
+    }
+    /** construtor curso */
+    public Curso(String nome){
+        setNome(nome);
+    }
 }
