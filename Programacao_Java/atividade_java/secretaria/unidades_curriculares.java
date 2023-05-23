@@ -1,8 +1,8 @@
 package secretaria;
-public class UnidadeCurricular {
+public class unidades_curriculares {
     
     private String nome;
-    private Curso curso;
+    private Cursos cursosCursos;
 
     /** funcao para pegar o nome da unidade curricular */
     public void setNome(String nome){
@@ -16,22 +16,21 @@ public class UnidadeCurricular {
     public String getNome(){
         return nome;
     }
-    /** funcao que recebe o nome do curso */
-    public boolean setCurso(Curso curso){
-        if (curso.getClass().getSimpleName() == "Curso"){
-            this.curso = curso;
+    /** funcao que recebe o nome do cursosCursos */
+    public boolean setCursos(Cursos cursosCursos){
+        if (cursosCursos.getClass().getSimpleName() == "Cursos"){
+            this.cursosCursos = cursosCursos;
             return true;
         }else{
             return false;
         }
     }
-    /** funcao get curso */
-    public Curso getCurso(){
-        return this.curso;
+    /** funcao get cursosCursos */
+    public Cursos getCursos(){
+        return this.cursosCursos;
     }
-    /** construtor unidade curricular */
-    public UnidadeCurricular(String nome, Curso curso){
+    public unidades_curriculares(String nome, Cursos cursosCursos){
         setNome(nome);
-        setCurso(curso);
+        setCursos(cursosCursos);
     }
 }
