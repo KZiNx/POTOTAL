@@ -2,22 +2,22 @@ package secretaria;
 
 public class notas {
 
-    private Alunos Alunos;
-    private Avaliacoes Avaliacoes;
+    private Avaliacoes avaliacoes;
     private float nota;
+    private Alunos alunos;
 
-    public boolean setAlunos(Alunos Alunos) {
-        if (Alunos.getClass().getSimpleName() == "alunos") {
-            this.Alunos = Alunos;
+    public boolean setAlunos(Alunos alunos) {
+        if (alunos.getClass().getSimpleName() == "alunos") {
+            this.alunos = alunos;
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean setAvaliacoes(Avaliacoes Avaliacoes) {
-        if (Avaliacoes.getClass().getSimpleName() == "avaliacoes") {
-            this.Avaliacoes = Avaliacoes;
+    public boolean setAvaliacoes(Avaliacoes avaliacoes) {
+        if (avaliacoes.getClass().getSimpleName() == "avaliacoes") {
+            this.avaliacoes = avaliacoes;
             return true;
         } else {
             return false;
@@ -25,11 +25,11 @@ public class notas {
     }
 
     public Avaliacoes getAvaliacoes() {
-        return this.Avaliacoes;
+        return this.avaliacoes;
     }
 
     public Alunos getAlunos() {
-        return this.Alunos;
+        return this.alunos;
     }
 
     public void setNota(float nota) {
