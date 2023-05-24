@@ -3,8 +3,13 @@ package secretaria;
 public class notas {
 
     private Avaliacoes avaliacoes;
-    private float nota;
+    private Double nota;
     private Alunos alunos;
+
+    /**
+     * @param alunos (Alunos)
+     * @return (boolean)
+     */
 
     public boolean setAlunos(Alunos alunos) {
         if (alunos.getClass().getSimpleName() == "alunos") {
@@ -15,6 +20,10 @@ public class notas {
         }
     }
 
+    /**
+     * @param avaliacoes (Avaliacoes)
+     * @return (boolean)
+     */
     public boolean setAvaliacoes(Avaliacoes avaliacoes) {
         if (avaliacoes.getClass().getSimpleName() == "avaliacoes") {
             this.avaliacoes = avaliacoes;
@@ -24,15 +33,25 @@ public class notas {
         }
     }
 
+    /**
+     * @return (Avaliacoes)
+     */
     public Avaliacoes getAvaliacoes() {
         return this.avaliacoes;
     }
 
+    /**
+     * @return (Alunos)
+     */
     public Alunos getAlunos() {
         return this.alunos;
     }
 
-    public void setNota(float nota) {
+    /**
+     * @param nota (Double)
+     * @return (boolean)
+     */
+    public void setNota(Double nota) {
         if (nota >= 0.0 && nota <= 10.0) {
             this.nota = nota;
         } else {
@@ -40,13 +59,23 @@ public class notas {
         }
     }
 
-    public float getNota() {
+    /**
+     * @return (Double)
+     */
+    public Double getNota() {
         return nota;
     }
 
-    public notas(Alunos Alunos, Avaliacoes Avaliacoes, float nota) {
+    /**
+     * 
+     * @param Alunos     (Alunos)
+     * @param Avaliacoes (Avaliacoes)
+     * @param nota2       (Double)
+     */
+
+    public notas(Alunos Alunos, Avaliacoes Avaliacoes, double nota2) {
         setAlunos(Alunos);
         setAvaliacoes(Avaliacoes);
-        setNota(nota);
+        setNota(nota2);
     }
 }

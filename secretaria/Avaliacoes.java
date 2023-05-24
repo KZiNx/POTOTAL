@@ -2,8 +2,11 @@ package secretaria;
 public class Avaliacoes {
     
     private String nome;
-    private unidades_curriculares unidadeCurricular;
-
+    private UnidadesCurriculares unidadeCurricular;
+/**
+ * 
+ * @param nome (String)
+ */
     public void setnome(String nome){
         if(nome.matches("[A-Za-z]*")){
             this.nome = nome;
@@ -11,25 +14,32 @@ public class Avaliacoes {
             System.out.println("nome invalido");
         }
     }
- 
+ /**
+  * 
+  * @return (String)
+  */
     public String getNome(){
         return nome;
     }
-    
-    public boolean setUnidadesCurriculares(unidades_curriculares unidadeCurricular){
-        if (unidadeCurricular.getClass().getSimpleName() == "UnidadeCurricular"){
-            this.unidadeCurricular = unidadeCurricular;
+    /**
+     * 
+     * @param unidadesCurriculares ()
+     * @return (boolean)
+     */
+    public boolean setUnidadesCurriculares(UnidadesCurriculares unidadesCurriculares){
+        if (unidadesCurriculares.getClass().getSimpleName() == "UnidadeCurricular"){
+            this.unidadeCurricular = unidadesCurriculares;
             return true;
         }else{
             System.out.println("unidade curricular invalidas");
             return false;
         }
     }
-    public unidades_curriculares getUnidadeCurricular(){
+    public UnidadesCurriculares getUnidadeCurricular(){
         return this.unidadeCurricular;
     }    
-    public Avaliacoes(String nome, unidades_curriculares unidadeCurricular){
+    public Avaliacoes(String nome, UnidadesCurriculares unidadesCurriculares){
         setnome(nome);
-        setUnidadesCurriculares(unidadeCurricular);
+        setUnidadesCurriculares(unidadesCurriculares);
     }
 }
