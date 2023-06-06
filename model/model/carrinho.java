@@ -4,21 +4,27 @@ public class carrinho {
     private String compras;
 /**
  * 
- * @param compras String
+ * @param compras (String)
  */
-    public void setcompras(String compras){
+    public void setCompras(String compras){
         if (compras.matches("[A-Za-z0-9]*") && compras.length() >= 0) {
             this.compras = compras;
         } else {
             System.out.println("compras invalido");
         }
     }
- 
-    public String getcompras(){
+ /**
+  * 
+  * @return (String)
+  */
+    public String getCompras(){
         return compras;
     }
-  
+  /**
+   * 
+   * @param compras (String)
+   */
     public carrinho(String compras){
-        setcompras(compras);
+        setCompras(compras);
     }
 }

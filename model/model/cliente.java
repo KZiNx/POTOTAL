@@ -1,13 +1,15 @@
 package model;
 
+import java.util.ArrayList;
+
 public class cliente {
 
     private String nome;
     private String cpf;
     private String endereco;
-    private String telefone;
+    private ArrayList<String> telefones = new ArrayList<String>();
     private String email;
-    private int nasc;
+    private String nasc;
     private String login;
     private String senha;
     private Double saldo;
@@ -41,7 +43,7 @@ public class cliente {
     }
 
     public void setSenha(String senha) {
-        if (senha.matches("aluno123*")) {
+        if (senha.matches("/^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm")) {
             this.senha = senha;
         } else {
             System.out.print("senha invalida");
@@ -53,7 +55,7 @@ public class cliente {
     }
 
     public void setLogin(String login) {
-        if (login.matches("login*") && senha.matches(senha)) {
+        if (login.matches("/[a-zA-Z0-9_]/g")) {
             this.login = login;
         } else {
             System.out.print("login invalido");
@@ -65,7 +67,7 @@ public class cliente {
     }
 
     public void setPagamento(String pagamento) {
-        if (pagamento.matches("cartão*") && pagamento.matches("dinheiro*") && pagamento.matches("pix*")) {
+        if (pagamento.matches("cartao*") && pagamento.matches("dinheiro*") && pagamento.matches("pix*")) {
             this.pagamento = pagamento;
         } else {
             System.out.print("forma de pagamento invalida");
@@ -75,32 +77,35 @@ public class cliente {
     public String getPagamento() {
         return pagamento;
     }
-
-    public void setNumTelefone(String telefone) {
-        if (telefone.matches("[0-9]*") && telefone.length() == 9) {
-            this.telefone = telefone;
-        } else {
-            System.out.print("numero invalido");
+   
+    public ArrayList<String> getTelefones() {
+        for(int cont = 0; cont <= telefones.size(); cont++) {
+            if(telefones.get(cont) != null) {
+                return telefones;
+            }
         }
+        return null;    
     }
+    public void setTelefones(ArrayList<String> telefones) {
+    	for(int cont = 0; cont <= telefones.size(); cont++) {
+    		if(telefones.get(cont).matches("^[0-9]{2}-([0-9]{8}|[0-9]{9})")) {
+    			this.telefones = telefones;
+    			}
+    		}
+    	}
 
-    public String getNumeroTelefone() {
-        return telefone;
-
-    }
-
-    public void setNasc(int nasc) {
-        if (nasc >= 18) {
+    public void setNasc(String nasc) {
+        if (nasc.matches("/^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$/")) {
             this.nasc = nasc;
         } else {
-            System.out.print("menor de idade detectado");
+            System.out.println("data invalida");
         }
     }
 
-    public int getNasc() {
+    public String getNasc() {
         return nasc;
-
     }
+
 
     public void setNumCPF(String cpf) {
         if (cpf.toString().matches("[0-9]*") && cpf.length() == 11) {
@@ -118,7 +123,7 @@ public class cliente {
         if (endereco.matches("[A-Za-z]*") && endereco.matches("[0-9]*")) {
             this.endereco = endereco;
         } else {
-            System.out.println("endereço invalido");
+            System.out.println("endereco invalido");
         }
     }
 
@@ -141,6 +146,5 @@ public class cliente {
 
     public cliente(String nome) {
         setNome(nome);
-    }
+    }}
 
-}

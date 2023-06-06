@@ -2,20 +2,29 @@ package model;
 public class categoria {
 
     private String categorias;
-
-    public void setcategorias(String categorias){
-        if (categorias.matches("*") ) {
+/**
+ * 
+ * @param categorias (String)
+ */
+    public void setCategorias(String categorias){
+        if (categorias.matches("Brinquedos*") && (categorias.matches("Domesticos*") && (categorias.matches("Tecnologia*") && (categorias.matches("Moveis*")))))  {
             this.categorias = categorias;
         } else {
-            System.out.println("categorias invalido");
+            System.out.println("categoria invalida/nao encontrada");
         }
     }
- 
-    public String getcategorias(){
+ /**
+  * 
+  * @return (String)
+  */
+    public String getCategorias(){
         return categorias;
     }
-  
+  /**
+   * 
+   * @param categorias (String)
+   */
     public categoria(String categorias){
-        setcategorias(categorias);
+        setCategorias(categorias);
     }
 }
