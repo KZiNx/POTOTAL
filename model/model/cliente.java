@@ -6,23 +6,20 @@ public class cliente {
 
     private String nome;
     private String cpf;
-    private String endereco;
-    private ArrayList<String> telefones = new ArrayList<String>();
+    private ArrayList<String> endereco = new ArrayList<>();
+    private ArrayList<String> telefones = new ArrayList<>();
     private String email;
     private String nasc;
-    private String login;
-    private String senha;
+    private String login = "kevin";
+    private String senha = "123";
     private Double saldo;
     private String pagamento;
-/**
- * 
- * @param nome
- */
+
     public void setNome(String nome) {
-        if (nome.matches("[A-Za-z]*")) {
+        if (nome.matches("[A-Za-z]+")) {
             this.nome = nome;
         } else {
-            System.out.print("nome invalido");
+            throw new IllegalArgumentException("Nome inválido");
         }
     }
 
@@ -31,10 +28,11 @@ public class cliente {
     }
 
     public void setEmail(String email) {
-        if (email.matches("[@]*") && email.matches("[A-Za-z]*") && email.matches("[0-9]*")) {
+       
+        if (email.matches("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}")) {
             this.email = email;
         } else {
-            System.out.print("email invalido");
+            throw new IllegalArgumentException("Email inválido");
         }
     }
 
@@ -43,10 +41,10 @@ public class cliente {
     }
 
     public void setSenha(String senha) {
-        if (senha.matches("/^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm")) {
+        if (senha.equals("123")) {
             this.senha = senha;
         } else {
-            System.out.print("senha invalida");
+            throw new IllegalArgumentException("Senha inválida");
         }
     }
 
@@ -55,10 +53,10 @@ public class cliente {
     }
 
     public void setLogin(String login) {
-        if (login.matches("/[a-zA-Z0-9_]/g")) {
+        if (login.equals("kevin")) {
             this.login = login;
         } else {
-            System.out.print("login invalido");
+            throw new IllegalArgumentException("Login inválido");
         }
     }
 
@@ -67,38 +65,36 @@ public class cliente {
     }
 
     public void setPagamento(String pagamento) {
-        if (pagamento.matches("cartao*") && pagamento.matches("dinheiro*") && pagamento.matches("pix*")) {
+        if (pagamento.equals("cartao") || pagamento.equals("dinheiro") || pagamento.equals("pix")) {
             this.pagamento = pagamento;
         } else {
-            System.out.print("forma de pagamento invalida");
+            throw new IllegalArgumentException("Forma de pagamento inválida");
         }
     }
 
     public String getPagamento() {
         return pagamento;
     }
-   
+
     public ArrayList<String> getTelefones() {
-        for(int cont = 0; cont <= telefones.size(); cont++) {
-            if(telefones.get(cont) != null) {
-                return telefones;
+        return telefones;
+    }
+
+    public void setTelefones(ArrayList<String> telefones) {
+        for (String telefone : telefones) {
+            if (telefone.matches("^[0-9]{2}-([0-9]{8}|[0-9]{9})")) {
+                this.telefones.add(telefone);
+            } else {
+                throw new IllegalArgumentException("Telefone inválido: " + telefone);
             }
         }
-        return null;    
     }
-    public void setTelefones(ArrayList<String> telefones) {
-    	for(int cont = 0; cont <= telefones.size(); cont++) {
-    		if(telefones.get(cont).matches("^[0-9]{2}-([0-9]{8}|[0-9]{9})")) {
-    			this.telefones = telefones;
-    			}
-    		}
-    	}
 
     public void setNasc(String nasc) {
-        if (nasc.matches("/^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$/")) {
+        if (nasc.matches("^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$")) {
             this.nasc = nasc;
         } else {
-            System.out.println("data invalida");
+            throw new IllegalArgumentException("Data de nascimento inválida");
         }
     }
 
@@ -106,12 +102,11 @@ public class cliente {
         return nasc;
     }
 
-
-    public void setNumCPF(String cpf) {
-        if (cpf.toString().matches("[0-9]*") && cpf.length() == 11) {
+    public void setCPF(String cpf) {
+        if (cpf.matches("[0-9]{11}")) {
             this.cpf = cpf;
         } else {
-            System.out.print("cpf invalido");
+            throw new IllegalArgumentException("CPF inválido");
         }
     }
 
@@ -119,32 +114,39 @@ public class cliente {
         return cpf;
     }
 
-    public void setEndereco(String endereco) {
-        if (endereco.matches("[A-Za-z]*") && endereco.matches("[0-9]*")) {
-            this.endereco = endereco;
-        } else {
-            System.out.println("endereco invalido");
-        }
-    }
-
-    public String getEndereco() {
+    public ArrayList<String> getEndereco() {
         return endereco;
     }
 
+    public void setEndereco(ArrayList<String> endereco) {
+        for (String enderecoItem : endereco) {
+            if (enderecoItem.matches("[A-Za-z0-9]+")) {
+                this.endereco.add(enderecoItem);
+            } else {
+                throw new IllegalArgumentException("Endereço inválido: " + enderecoItem);
+            }
+        }
+    }
+
     public void setSaldo(Double saldo) {
-        if (saldo >= saldo) {
+        if (saldo >= 0.0) {
             this.saldo = saldo;
         } else {
-            System.out.print("saldo insuficiente");
+            throw new IllegalArgumentException("Saldo insuficiente");
         }
     }
 
     public Double getSaldo() {
         return saldo;
-
     }
 
     public cliente(String nome) {
         setNome(nome);
-    }}
+    }
 
+    public void setTelefones(String string) {
+    }
+
+    public void setEndereco(String string) {
+    }
+}
