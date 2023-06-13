@@ -11,7 +11,7 @@ public class teste {
 	cliente.setEmail("kevin@gmail.com");
 	cliente.setSenha("123");
 	cliente.setLogin("kevin");
-	cliente.setTelefones("992321840");
+	cliente.setTelefones("991887371");
 	cliente.setSaldo((double) 1); 
 	
 	System.out.println("Nome: " + cliente.getNome());
@@ -19,6 +19,7 @@ public class teste {
 	System.out.println("Nascimento: " + cliente.getNasc());
 	System.out.println("Endereço: " + cliente.getEndereco());
 	System.out.println("Email: " + cliente.getEmail());
+	System.out.println("Login: " + cliente.getLogin());
 	System.out.println("Senha: " + cliente.getSenha());
 	System.out.println("Telefone: " + cliente.getTelefones());;
 

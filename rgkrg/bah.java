@@ -1,12 +1,12 @@
+package rgkrg;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import model.categoria;
 
-public class TelaProduto {
+public class bah {
     public static void main(String[] args) {
         JLabel lbNome = new JLabel("Nome");
         JLabel lbPreco = new JLabel("preco");
