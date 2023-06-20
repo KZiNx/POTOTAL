@@ -1,12 +1,3 @@
-package model;
-
-/**
- * 
- * @author Bernardo Zapelini
- * 
- *         Classe produto da Loja Virtual
- *
- */
 public class produto {
     private String nome;
     private double preco;
