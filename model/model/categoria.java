@@ -1,30 +1,43 @@
 package model;
+
 public class categoria {
 
-    private String categorias;
-/**
- * 
- * @param categorias (String)
- */
-    public void setCategorias(String categorias){
-        if (categorias.matches("Brinquedos*") && (categorias.matches("Domesticos*") && (categorias.matches("Tecnologia*") && (categorias.matches("Moveis*")))))  {
-            this.categorias = categorias;
-        } else {
-            System.out.println("categoria invalida/nao encontrada");
+    private String tipo;
+    private String nome;
+
+    /**
+     * 
+     * @return (String)
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * 
+     * @param nome (String)
+     */
+    public void setNome(String nome) {
+        if (nome.length() > 3 && nome.matches("[A-Za-z0-9]*")) {
+            this.nome = nome;
         }
     }
- /**
-  * 
-  * @return (String)
-  */
-    public String getCategorias(){
-        return categorias;
+
+    /**
+     * 
+     * @return (String)
+     */
+    public String getTipo() {
+        return tipo;
     }
-  /**
-   * 
-   * @param categorias (String)
-   */
-    public categoria(String categorias){
-        setCategorias(categorias);
+
+    /**
+     * 
+     * @param tipo (String)
+     */
+    public void setTipo(String tipo) {
+        if (tipo.matches("[A-Za-z]*")) {
+            this.tipo = tipo;
+        }
     }
 }

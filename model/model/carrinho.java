@@ -1,30 +1,68 @@
 package model;
+
 public class carrinho {
 
-    private String compras;
-/**
- * 
- * @param compras (String)
- */
-    public void setCompras(String compras){
-        if (compras.matches("[A-Za-z0-9]*") && compras.length() >= 0) {
-            this.compras = compras;
+    private cliente cliente;
+    private int quantidade;
+    private int valor;
+
+    /**
+     * 
+     * 
+     * @return (Cliente)
+     */
+    public cliente getCliente() {
+        return cliente;
+    }
+
+    /**
+     * 
+     * @param cliente (Cliente)
+     */
+    public void setCliente(cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    /**
+     * 
+     * @return (int)
+     */
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    /**
+     *
+     * 
+     * @param quantidade (int)
+     */
+    public void setQuantidade(int quantidade) {
+        if (quantidade >= 0) {
+            this.quantidade = quantidade;
         } else {
-            System.out.println("compras invalido");
+            System.out.print("quantidade invalida");
         }
     }
- /**
-  * 
-  * @return (String)
-  */
-    public String getCompras(){
-        return compras;
+
+    /**
+     * 
+     * @return (int)
+     */
+    public int getValor() {
+        return valor;
     }
-  /**
-   * 
-   * @param compras (String)
-   */
-    public carrinho(String compras){
-        setCompras(compras);
+
+    /**
+     * 
+     * 
+     * @param valor (int)
+     */
+    public void setValor(int valor) {
+        if (valor >= 0) {
+            this.valor = valor;
+        } else {
+            System.out.print("valor invalido");
+        }
     }
+
 }

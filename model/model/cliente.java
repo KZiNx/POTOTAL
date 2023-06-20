@@ -14,10 +14,11 @@ public class cliente {
     private String senha;
     private Double saldo;
     private String pagamento;
-/**
- * 
- * @param nome
- */
+
+    /**
+     * 
+     * @param nome
+     */
     public void setNome(String nome) {
         if (nome.matches("[A-Za-z]*")) {
             this.nome = nome;
@@ -77,22 +78,23 @@ public class cliente {
     public String getPagamento() {
         return pagamento;
     }
-   
+
     public ArrayList<String> getTelefones() {
-        for(int cont = 0; cont <= telefones.size(); cont++) {
-            if(telefones.get(cont) != null) {
+        for (int cont = 0; cont <= telefones.size(); cont++) {
+            if (telefones.get(cont) != null) {
                 return telefones;
             }
         }
-        return null;    
+        return null;
     }
+
     public void setTelefones(ArrayList<String> telefones) {
-    	for(int cont = 0; cont <= telefones.size(); cont++) {
-    		if(telefones.get(cont).matches("^[0-9]{2}-([0-9]{8}|[0-9]{9})")) {
-    			this.telefones = telefones;
-    			}
-    		}
-    	}
+        for (int cont = 0; cont <= telefones.size(); cont++) {
+            if (telefones.get(cont).matches("^[0-9]{2}-([0-9]{8}|[0-9]{9})")) {
+                this.telefones = telefones;
+            }
+        }
+    }
 
     public void setNasc(String nasc) {
         if (nasc.matches("/^(19[0-9]{2}|2[0-9]{3})-(0[1-9]|1[012])-([123]0|[012][1-9]|31)$/")) {
@@ -105,7 +107,6 @@ public class cliente {
     public String getNasc() {
         return nasc;
     }
-
 
     public void setNumCPF(String cpf) {
         if (cpf.toString().matches("[0-9]*") && cpf.length() == 11) {
@@ -144,7 +145,10 @@ public class cliente {
 
     }
 
+    public void setTelefones(String string) {
+    }
+
     public cliente(String nome) {
         setNome(nome);
-    }}
-
+    }
+}

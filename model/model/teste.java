@@ -1,11 +1,10 @@
 package model;
-
 public class teste {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 	
 	cliente cliente = new cliente("kevin");
-	cliente.setCPF("109.025.699.02");
+	cliente.setNumCPF("109.025.699.02");
 	cliente.setNasc("16092005");
 	cliente.setEndereco("campo alegre 80");
 	cliente.setEmail("kevin@gmail.com");
