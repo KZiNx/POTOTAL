@@ -1,5 +1,4 @@
-
-
+package model;
 public class endereco {
 
     private String local;

@@ -1,5 +1,4 @@
-
-
+package model;
 public class pagamento {
 
     private double total;
