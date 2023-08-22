@@ -1,0 +1,108 @@
+package WEG;
+
+public class Gerador extends ProdutoWEG {
+
+    private String Tipocombustivel;
+    private String autonomia;
+
+    public Gerador(String codigo, String tipo, double preco, int potencia, int tensao, double capacidade,
+                              double Tipocombustivel, int autonomia) {
+        super(codigo, tipo, preco, potencia, tensao, capacidade);
+        this.Tipocombustivel = Tipocombustivel;
+        this.autonomia = autonomia;
+    }
+
+    public double getTipocombustivel() {
+        return Tipocombustivel;
+    }
+
+    public void setTipocombustivel(double Tipocombustivel) {
+        this.Tipocombustivel = Tipocombustivel;
+    }
+
+    public int getautonomia() {
+        return autonomia;
+    }
+
+    public void setautonomia(int autonomia) {
+        this.autonomia = autonomia;
+    }
+
+    public static void main(String[] args) {
+        // Exemplo de uso da classe InversorFrequencia
+        Gerador gerador = new Gerador("#789", "Inversor",  799.99,
+                                                             300, 220, 200 , 50.0, 3);
+
+        System.out.println("Código: " + gerador.getCodigo());
+        System.out.println("Tipo: " + gerador.getTipo());
+        System.out.println("Preço: " + gerador.getPreco());
+        System.out.println("Potência: " + gerador.getPotencia());
+        System.out.println("Tensão: " + gerador.getTensao());
+        System.out.println("Capacidade: " + gerador.getCapacidade());
+        System.out.println("Capacidade de Frequência: " + gerador.getTipocombustivel());
+        System.out.println("Número de Fases: " + gerador.getautonomia());
+    }
+}
+-------------------------------------------------------------------
+package WEG;
+
+public class Gerador extends ProdutoWEG {
+
+    private String Tipocombustivel;
+    private String autonomia;
+
+    public Gerador(String codigo, String tipo, double preco, int potencia, int tensao, double capacidade,
+                              String Tipocombustivel, String autonomia) {
+        super(codigo, tipo, preco, potencia, tensao, capacidade);
+        this.Tipocombustivel = Tipocombustivel;
+        this.autonomia = autonomia;
+    }
+
+    public String getTipocombustivel() {
+        return Tipocombustivel;
+    }
+
+    public void setTipocombustivel(String Tipocombustivel) {
+        this.Tipocombustivel = Tipocombustivel;
+    }
+
+    public String getautonomia() {
+        return autonomia;
+    }
+
+    public void setautonomia(String autonomia) {
+        this.autonomia = autonomia;
+    }
+
+    public static void main(String[] args) {
+        // Exemplo de uso da classe InversorFrequencia
+        Gerador gerador = new Gerador("#789", "gerador",  799.99,
+                                                             300, 220, 200 , 50.0, 3);
+
+        System.out.println("Código: " + gerador.getCodigo());
+        System.out.println("Tipo: " + gerador.getTipo());
+        System.out.println("Preço: " + gerador.getPreco());
+        System.out.println("Potência: " + gerador.getPotencia());
+        System.out.println("Tensão: " + gerador.getTensao());
+        System.out.println("Capacidade: " + gerador.getCapacidade());
+        System.out.println("Capacidade de Frequência: " + gerador.getTipocombustivel());
+        System.out.println("Número de Fases: " + gerador.getautonomia());
+    }
+}
+
+-----------------------------------------------------------------------
+WEG weg = new WEG();
+
+        ProdutoWEG produto1 = new ProdutoWEG("#123", "Eletrodoméstico", 599.99f, "1000W", "220V", "10kg");
+        ProdutoWEG produto2 = new ProdutoWEG("#456", "Máquina", 999.99f, "2000W", "110V", "20kg");
+        weg.adicionarProduto(produto1);
+        weg.adicionarProduto(produto2);
+
+        ServicoManutencao servico1 = new ServicoManutencao("Limpeza", 50.0);
+        ServicoManutencao servico2 = new ServicoManutencao("Reparo elétrico", 150.0);
+        weg.adicionarServico(servico1);
+        weg.adicionarServico(servico2);
+
+        weg.listarProdutos();
+        weg.listarServicos();
+    
