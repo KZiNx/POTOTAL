@@ -30,13 +30,18 @@ public class TesteAnimal {
 	System.out.println(pepeixinho.bolhas());
 	System.out.println(pepeixinho.reproduzir());
 	System.out.println(pepeixinho.venenoso());
-	
+	System.out.println();
 	Sapo Zeca = new Sapo ("ToadZilla",1,"pequeno");
 	System.out.println(Zeca.coachar());
 	System.out.println(Zeca.reproduzir());
 	System.out.println(Zeca.venenoso());
 	System.out.println(Zeca.salto());
-	
+	System.out.println();
+	PeixeAguaDoce Xeipe = new PeixeAguaDoce ("PEIXE",1,"grandao");
+	System.out.println(Xeipe.mar());
+	System.out.println(Xeipe.bolhas());
+	System.out.println(Xeipe.reproduzir());
+	System.out.println(Xeipe.venenoso());
 	}
 }
 
