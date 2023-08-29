@@ -1,7 +1,15 @@
 package WEG;
 
+/**
+ * A classe TESTE contém um exemplo de uso do sistema da empresa WEG, demonstrando a funcionalidade dos produtos e serviços de manutenção.
+ */
 public class TESTE {
 
+  /**
+   * Método principal da classe TESTE (exemplo de uso do sistema WEG).
+   *
+   * @param args Os argumentos de linha de comando (não utilizados aqui).
+   */
   public static void main(String[] args) {
     WEG weg = new WEG();
 

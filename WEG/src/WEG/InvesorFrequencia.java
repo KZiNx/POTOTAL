@@ -1,5 +1,8 @@
 package WEG;
 
+/**
+ * A classe InversorFrequencia representa um tipo de produto da empresa WEG, especificamente um inversor de frequência.
+ */
 public class InvesorFrequencia extends ProdutoWEG {
 
     private double capacidadeFrequencia;
